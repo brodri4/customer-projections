@@ -1,0 +1,22 @@
+#root{
+    display:flex;
+    justify-content: center;    
+}
+
+
+
+.flex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-margin{
+    margin-left: .5rem;
+    margin-right: 2rem
+}
+
+button{
+    height: 2.75rem;
+}
+
