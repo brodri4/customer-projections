@@ -48,9 +48,7 @@ function InputField(props) {
 
   const handleState = () => {
     let val = validationCheck()
-    console.log(val)
     if(val == true){
-      console.log("Hello")
       hideModal()
       props.onState(data)
     }else{
@@ -62,7 +60,16 @@ function InputField(props) {
   }
 
   const handleFinal =() => {
-    props.onFinal(data)
+    let val = validationCheck()
+    if(val == true){
+      hideModal()
+      props.onFinal(data)
+    }else{
+      setData({
+        ...data,
+        modal: true
+      })
+    } 
   }
 
   const hideModal = () => {
