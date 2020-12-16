@@ -15,10 +15,17 @@ h1{
   text-align: center;
 }
 
+h5{
+  font-family: "Lucida Console";
+  align-self: center;
+  color: rgb(71, 64, 64);
+  text-align: center;
+  margin: 0rem 2rem 1.5rem 2rem
+}
 .graph-container{
 display: flex;
 justify-content: center;
-margin-top: 3rem;
+margin-top: 1rem;
 flex-wrap: wrap;
 }
 

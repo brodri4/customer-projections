@@ -10,7 +10,7 @@ export const onLogin = (data) => {
 
 export const onState = (data) => {
     return (dispatch) => {
-        fetch('http://localhost:8080/', {
+        fetch('https://boris-customer-api.herokuapp.com/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ export const onState = (data) => {
 
 export const onFinal = (data) => {
     return (dispatch) => {
-        fetch('http://localhost:8080/final', {
+        fetch('https://boris-customer-api.herokuapp.com/final', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

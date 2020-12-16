@@ -25,9 +25,10 @@ function InputField(props) {
     valA: 400, valB:240, valC:360,
     a1: 80, a2: 10, a3: 10,
     b1: 20, b2:70,  b3: 10,
-    c1: 30, c2: 10, c3: 60
-
+    c1: 30, c2: 10, c3: 60,
+    modal: false, tnum:1
   })
+  
 
 
   useEffect(() => {
@@ -46,12 +47,47 @@ function InputField(props) {
   }
 
   const handleState = () => {
-    props.onState(data)
+    let val = validationCheck()
+    console.log(val)
+    if(val == true){
+      console.log("Hello")
+      hideModal()
+      props.onState(data)
+    }else{
+      setData({
+        ...data,
+        modal: true
+      })
+    } 
   }
 
   const handleFinal =() => {
     props.onFinal(data)
   }
+
+  const hideModal = () => {
+    setData({
+      ...data,
+      modal: false
+    })
+  }
+
+const validationCheck = () => {
+  if(parseInt(data.a1) + parseInt(data.a2) + parseInt(data.a3) != 100 || 
+  parseInt(data.b1) + parseInt(data.b2) + parseInt(data.b3) != 100 || 
+  parseInt(data.c1) + parseInt(data.c2) + parseInt(data.c3) != 100 ||
+  parseInt(data.a1) <= 0 || parseInt(data.a2) <= 0 || parseInt(data.a3) <= 0 ||
+  parseInt(data.b1) <= 0 || parseInt(data.b2) <= 0 || parseInt(data.b3) <= 0 ||
+  parseInt(data.c1) <= 0 || parseInt(data.c2) <= 0 || parseInt(data.c3) <= 0 ||
+  parseInt(data.valA) <= 0 || parseInt(data.valB) <= 0 || parseInt(data.valC) <= 0 ||
+  parseInt(data.tnum) <= 0) {
+    return false
+  }else {
+    return true
+  }
+
+
+}
 
   return (
     <div class="container"> 
@@ -60,6 +96,7 @@ function InputField(props) {
       <TextField
           label="Company A"
           id="nameA"
+          defaultValue= "Company A"
           className={clsx(classes.margin, classes.textField)}
           helperText="Name Of Company A"
           onChange = {handleChange}
@@ -67,6 +104,7 @@ function InputField(props) {
       <TextField
           label="Company B"
           id="nameB"
+          defaultValue= "Company B"
           className={clsx(classes.margin, classes.textField)}
           helperText="Name Of Company B"
           onChange = {handleChange}
@@ -74,6 +112,7 @@ function InputField(props) {
       <TextField
           label="Company C"
           id="nameC"
+          defaultValue= "Company C"
           className={clsx(classes.margin, classes.textField)}
           helperText="Name Of Company C"
           onChange = {handleChange}
@@ -83,6 +122,7 @@ function InputField(props) {
       <div class="flex">
       <TextField
           label="Customers"
+          defaultValue="400"
           id="valA"
           className={clsx(classes.margin, classes.textField)}
           helperText="# Of Customers At A"
@@ -91,6 +131,7 @@ function InputField(props) {
         />
         <TextField
           label="Customers"
+          defaultValue="240"
           id="valB"
           className={clsx(classes.margin, classes.textField)}
           helperText="# Of Customers At B"
@@ -100,6 +141,7 @@ function InputField(props) {
         <TextField
           label="Customers"
           id="valC"
+          defaultValue="360"
           className={clsx(classes.margin, classes.textField)}
           helperText="# Of Customers At C"
           type="number"
@@ -110,6 +152,7 @@ function InputField(props) {
       <TextField
           label="Percentage"
           id="a1"
+          defaultValue="80"
           className={clsx(classes.margin, classes.textField)}
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
@@ -121,6 +164,7 @@ function InputField(props) {
               <TextField
           label="Percentage"
           id="b2"
+          defaultValue="70"
           className={clsx(classes.margin, classes.textField)}
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
@@ -132,6 +176,7 @@ function InputField(props) {
               <TextField
           label="Percentage"
           id="c3"
+          defaultValue="60"
           className={clsx(classes.margin, classes.textField)}
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
@@ -145,6 +190,7 @@ function InputField(props) {
       <TextField
           label="Percentage"
           id="a2"
+          defaultValue="10"
           className={clsx(classes.margin, classes.textField)}
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
@@ -156,6 +202,7 @@ function InputField(props) {
               <TextField
           label="Percentage"
           id="b1"
+          defaultValue="20"
           className={clsx(classes.margin, classes.textField)}
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
@@ -167,6 +214,7 @@ function InputField(props) {
               <TextField
           label="Percentage"
           id="c1"
+          defaultValue="30"
           className={clsx(classes.margin, classes.textField)}
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
@@ -180,6 +228,7 @@ function InputField(props) {
       <TextField
           label="Percentage"
           id="a3"
+          defaultValue="10"
           className={clsx(classes.margin, classes.textField)}
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
@@ -191,6 +240,7 @@ function InputField(props) {
       <TextField
           label="Percentage"
           id="b3"
+          defaultValue="10"
           className={clsx(classes.margin, classes.textField)}
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
@@ -202,6 +252,7 @@ function InputField(props) {
       <TextField
           label="Percentage"
           id="c2"
+          defaultValue="10"
           className={clsx(classes.margin, classes.textField)}
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
@@ -215,6 +266,7 @@ function InputField(props) {
       <TextField
           label="State"
           id="tnum"
+          defaultValue="1"
           className={clsx(classes.margin, classes.textField)}
           helperText="# Of State Changes"
           type="number"
@@ -226,6 +278,10 @@ function InputField(props) {
       <div class="button-margin">
       <Button variant="contained" onClick={handleFinal}>Final State</Button>
       </div>
+      </div>
+      <div class="flex">
+      <h4 class="error"> {data.modal ? 'Error - Make Sure % For Each Company Adds Up To 100. Also, All Numbers > 0' : ''}
+      </h4>
       </div>
     </form>
     </div>
