@@ -9,13 +9,17 @@ const reducer = (state, action) => {
             ...state, 
             data: action.payload
         }
+    }if(action.type == actionTypes.ON_STATE) {
+        return {
+            ...state, 
+            data: action.payload 
+        }
+    }if(action.type == actionTypes.ON_FINAL) {
+        return {
+            ...state, 
+            data: action.payload 
+        }
     }
-    //  else if(action.type == actionTypes.FETCH_MOVIES) {
-    //     return {
-    //         ...state, 
-    //         movies: action.payload 
-    //     }
-    // }
 
     return state
 }

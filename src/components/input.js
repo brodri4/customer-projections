@@ -45,6 +45,13 @@ function InputField(props) {
     props.onChange(data)
   }
 
+  const handleState = () => {
+    props.onState(data)
+  }
+
+  const handleFinal =() => {
+    props.onFinal(data)
+  }
 
   return (
     <div class="container"> 
@@ -214,10 +221,10 @@ function InputField(props) {
           onChange = {handleChange}
         />
       <div class="button-margin">
-      <Button variant="contained">Calculate State</Button>
+      <Button variant="contained" onClick={handleState}>Calculate State</Button>
       </div>
       <div class="button-margin">
-      <Button variant="contained">Final State</Button>
+      <Button variant="contained" onClick={handleFinal}>Final State</Button>
       </div>
       </div>
     </form>
@@ -227,7 +234,9 @@ function InputField(props) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onChange: (data) => dispatch(actionCreators.onLogin(data))
+    onChange: (data) => dispatch(actionCreators.onLogin(data)),
+    onState: (data) => dispatch(actionCreators.onState(data)),
+    onFinal: (data) => dispatch(actionCreators.onFinal(data))
   }
 }
 
