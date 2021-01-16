@@ -18,6 +18,7 @@ export const onState = (data) => {
             body: JSON.stringify({data:data})
         }).then(response => response.json())
         .then(result => {
+            console.log(result)
             dispatch({type: actionTypes.ON_STATE, payload: result})
         })
     }
@@ -26,16 +27,7 @@ export const onState = (data) => {
 
 export const onFinal = (data) => {
     return (dispatch) => {
-        fetch('https://boris-customer-api.herokuapp.com/final', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({data:data})
-        }).then(response => response.json())
-        .then(result => {
-            dispatch({type: actionTypes.ON_FINAL, payload: result})
-        })
+        dispatch({type: actionTypes.ON_FINAL, payload: data})
     }
 
 }

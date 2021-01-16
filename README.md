@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+<h1> Customer Projection Modeler</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="./src/images/customerflow.png" width="300" alt="Model Image"/>
 
-## Available Scripts
+<h2>Summary </h2>
 
-In the project directory, you can run:
+- [About the Project](#about-the-project)
+- [Usage](#usage)
+- [Videos and Screenshots](#videos-and-screenshots)
+- [Getting Started](#getting-started)
+- [Built With](#built-with)
+- [Accessibility](#accessibility)
+- [Authors](#authors)
+- [Acknowledgements](#acknowledgements)
 
-### `npm start`
+## About the Project
+A Markov Chains system is one which experiences transitions from one state to another according to certain probabilistic rules. One practical application of Markov Chain systems is to model customer flow between various different competeting companies. By knowing the initial distibution state, we can make accurate predictions for any finite number of future states. We can also find the final distribution state in which the system reaches stable equilibrium.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Usage
+To start, visit [Customer-Modeler](http://customer-flow-modeler-brodri4.surge.sh/). Once there, you will want to define the inital probability state for the system. An example state has been provided but you can change the name, initial customers, and percentage flow for each of the three companies. Make sure that the percentages add up to 100% for each one. From there, choose which future state you wish to calculate. By default, it is set to 1. There is also an option to calculate the final equilibrium state of the system. As for the graph, there is a tool in the bottom left hand corner that centers, locks-in-place, and zooms in/out. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To set up a local copy of the project follow the steps below. Be sure to follow the instructions in the [server-side repository](https://github.com/brodri4/customer-projection-api) as well.
 
-### `npm run build`
+# Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* In an empty folder initialize a new Node.js project.
+```sh
+npm init
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone to local machine
+```sh
+git clone https://github.com/brodri4/customer-projections
+```
+2. Install NPM packages
+```sh
+npm install 
+```
+3. Start program
+```sh
+npm start
+```
 
-### `npm run eject`
+## Built With
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Javascript
+- CSS
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [React Redux](https://react-redux.js.org/)
+- [React-Flow-Renderer](https://reactflow.dev/)
+- [Material-Ui](https://material-ui.com/)
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [Sequelize](https://sequelize.org/)
+- [PostgreSQL](https://www.postgresql.org/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Authors
 
-## Learn More
+- **Borinquen "Boris" Rodriguez** - [brodri4](https://github.com/brodri4)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

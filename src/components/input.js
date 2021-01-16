@@ -63,6 +63,29 @@ function InputField(props) {
     let val = validationCheck()
     if(val == true){
       hideModal()
+      let a1 = parseInt(data.a1)/100
+      let a2 = parseInt(data.a2)/100
+      let b1 = parseInt(data.b1)/100
+      let b2 = parseInt(data.b2)/100
+      let c1 = parseInt(data.c1)/100
+      let c2 = parseInt(data.c2)/100
+      let valA = parseInt(data.valA)
+      let valB = parseInt(data.valB)
+      let valC = parseInt(data.valC)
+      let total = valA + valB + valC
+  
+      let x = (1-a1-b2+(a1*b2) -(b1*a2))/((c1*a2)+c2-(c2*a1))
+      let B = (1-a1)/(1+b1+x-a1-(x*a1)+(x*c1))
+      let C = x*B
+      let A = 1-B-C
+          
+      setData({
+        ...data,
+        valA: Math.round(A * total),
+        valB: Math.round(B * total),
+        valC: Math.round(C * total)
+      })
+
       props.onFinal(data)
     }else{
       setData({
